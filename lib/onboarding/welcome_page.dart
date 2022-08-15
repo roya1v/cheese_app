@@ -1,3 +1,5 @@
+import 'package:cheese_app/onboarding/sign_in/bloc/sign_in_bloc.dart';
+import 'package:cheese_app/onboarding/sign_in/sign_in_page.dart';
 import 'package:cheese_app/repositories/authentication_repository.dart';
 import 'package:cheese_app/onboarding/sign_up/bloc/sign_up_bloc.dart';
 import 'package:cheese_app/onboarding/sign_up/sign_up_page.dart';
@@ -33,14 +35,25 @@ class WelcomePage extends StatelessWidget {
                             return BlocProvider(
                               child: const SignUpPage(),
                               create: (context) => SignUpBloc(
-                                  repository:
-                                      context.read<AuthenticationRepository>()),
+                                  repository: context.read(),
+                                  userRepository: context.read()),
                             );
                           })));
                         }),
                         child: const Text('Sign Up')),
                     OutlinedButton(
-                        onPressed: (() {}), child: const Text('Sign In')),
+                        onPressed: (() {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: ((context) {
+                            return BlocProvider(
+                              child: const SignInPage(),
+                              create: (context) => SignInBloc(
+                                  repository:
+                                      context.read<AuthenticationRepository>()),
+                            );
+                          })));
+                        }),
+                        child: const Text('Sign In')),
                   ],
                 ),
               ],

@@ -23,14 +23,16 @@ class _CheesesFeedState extends State<CheesesFeed> {
                 itemBuilder: ((context, index) {
                   return Card(
                       child: ListTile(
-                    title: Text(snapshot.data![index].body),
-                    subtitle: RelativeDate(
-                        date:
-                            snapshot.data![index].createdAt ?? DateTime.now()),
-                  ));
+                          title: Text(snapshot.data![index].body),
+                          trailing: RelativeDate(
+                              date: snapshot.data![index].createdAt ??
+                                  DateTime.now()),
+                          subtitle: Text(snapshot.data![index].author ?? '')));
                 }));
           } else {
-            return Text('');
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
           }
         }));
   }

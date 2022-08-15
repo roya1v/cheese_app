@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class AccountPage extends StatefulWidget {
@@ -14,8 +15,11 @@ class _AccountPageState extends State<AccountPage> {
       appBar: AppBar(title: const Text('Account')),
       body: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
         Center(
-            child:
-                ElevatedButton(onPressed: () {}, child: const Text('Sign out')))
+            child: ElevatedButton(
+                onPressed: () {
+                  FirebaseAuth.instance.signOut();
+                },
+                child: const Text('Sign out')))
       ]),
     );
   }

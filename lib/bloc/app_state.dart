@@ -12,3 +12,5 @@ class AppInitial extends AppState {}
 class AppLoggedIn extends AppState {}
 
 class AppNotLoggedIn extends AppState {}
+
+class AppNeedsGuildSelection extends AppState {}

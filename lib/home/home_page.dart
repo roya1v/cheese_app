@@ -2,7 +2,6 @@ import 'package:cheese_app/home/account_page/account_page.dart';
 import 'package:cheese_app/home/cheese_creation/cheese_creation_page.dart';
 import 'package:cheese_app/home/cheeses_feed/cheeses_feed.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);

@@ -29,10 +29,14 @@ class _CheeseCreationPageState extends State<CheeseCreationPage> {
           ),
           ElevatedButton(
               onPressed: () async {
-                await context
+                context
                     .read<CheesesRepository>()
-                    .create(cheese: Cheese(body: _body));
-                Navigator.of(context).pop();
+                    .create(cheese: Cheese(body: _body))
+                    .then(
+                  (_) {
+                    Navigator.of(context).pop();
+                  },
+                );
               },
               child: const Text('Submit'))
         ],
