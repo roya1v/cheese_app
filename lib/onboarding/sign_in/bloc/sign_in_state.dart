@@ -10,3 +10,5 @@ abstract class SignInState extends Equatable {
 class SignInInitial extends SignInState {}
 
 class SignInLoading extends SignInState {}
+
+class SignInError extends SignInState {}

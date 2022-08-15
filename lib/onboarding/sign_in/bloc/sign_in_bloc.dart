@@ -9,9 +9,14 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
   final AuthenticationRepository repository;
 
   SignInBloc({required this.repository}) : super(SignInInitial()) {
-    on<SignInEvent>((event, emit) {
+    on<SignInEvent>((event, emit) async {
       if (event is SignInPressed) {
-        repository.signIn(email: event.email, password: event.password);
+        emit(SignInLoading());
+        try {
+          await repository.signIn(email: event.email, password: event.password);
+        } catch (e) {
+          emit(SignInError());
+        }
       }
     });
   }

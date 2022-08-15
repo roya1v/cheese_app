@@ -44,13 +44,18 @@ class _SignInPageState extends State<SignInPage> {
                 ),
               ),
             ),
-            ElevatedButton(
-                onPressed: () {
-                  context
-                      .read<SignInBloc>()
-                      .add(SignInPressed(email: _email, password: _password));
-                },
-                child: const Text('Sign In'))
+            Offstage(
+              offstage: state is! SignInError,
+              child: const Text('An error has occured'),
+            ),
+            state is! SignInLoading
+                ? ElevatedButton(
+                    onPressed: () {
+                      context.read<SignInBloc>().add(
+                          SignInPressed(email: _email, password: _password));
+                    },
+                    child: const Text('Sign In'))
+                : const CircularProgressIndicator()
           ],
         );
       })),
