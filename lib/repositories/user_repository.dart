@@ -22,4 +22,9 @@ class UserRepository {
   Future<void> setName(String name) async {
     await _user.set({'name': name});
   }
+
+  Future<String> getName() async {
+    final userDict = await _user.get();
+    return userDict['name'];
+  }
 }

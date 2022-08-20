@@ -1,3 +1,4 @@
+import 'package:cheese_app/home/cheeses_feed/cheese_tile.dart';
 import 'package:cheese_app/model/cheese.dart';
 import 'package:cheese_app/common/relative_date.dart';
 import 'package:cheese_app/repositories/cheeses_repository.dart';
@@ -21,13 +22,7 @@ class _CheesesFeedState extends State<CheesesFeed> {
             return ListView.builder(
                 itemCount: snapshot.data!.length,
                 itemBuilder: ((context, index) {
-                  return Card(
-                      child: ListTile(
-                          title: Text(snapshot.data![index].body),
-                          trailing: RelativeDate(
-                              date: snapshot.data![index].createdAt ??
-                                  DateTime.now()),
-                          subtitle: Text(snapshot.data![index].author ?? '')));
+                  return CheeseTile(cheese: snapshot.data![index]);
                 }));
           } else {
             return const Center(

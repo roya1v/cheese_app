@@ -11,19 +11,22 @@ class RelativeDate extends StatelessWidget {
       return 'now';
     }
 
-    if (duration.inDays > 1) {
-      return date.toString();
-    }
-
     if (duration.inMinutes < 45) {
       return '${duration.inMinutes} minutes ago';
     }
 
-    return date.toString();
+    if (duration.inDays < 1) {
+      return '${duration.inHours} hours ago';
+    }
+
+    return '${duration.inDays} days ago';
   }
 
   @override
   Widget build(BuildContext context) {
-    return Text(_getString());
+    return Text(
+      _getString(),
+      style: Theme.of(context).textTheme.caption,
+    );
   }
 }
