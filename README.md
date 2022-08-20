@@ -1,16 +1,10 @@
-# cheese_app
+# CheeseApp
 
-A new Flutter project.
+> I'm a huge flutter fan but recently I was kinda busy  with my iOS native projects so I wanted to get back to developing something with flutter. Cheese app is just a simple Twitter like app for arguing about cheese. 
 
-## Getting Started
+## Description
+Did you ever want to show the cheese community your love for a specific cheese? Look no more because with CheeseApp you can! Just sign up, select your cheese guild and start discussing the superiority of your favorite cheese.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Welcome screen](readme_assets/welcome_screen_v1.png =300x)
+![Welcome screen](readme_assets/guild_selection_screen_v1.png =300x)
+![Welcome screen](readme_assets/home_screen_v1.png =300x)
